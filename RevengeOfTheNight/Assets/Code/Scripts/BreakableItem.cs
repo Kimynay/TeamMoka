@@ -14,13 +14,16 @@ public class BreakableItem : MonoBehaviour
     private GameObject image;
     private float localTime = 0.0f;
     public bool disapearWhenBreak = true;
-    public bool throwPartWhenBraek = true;
+    public bool throwPartWhenBreak = true;
     public bool changeImageWhenBreak = false;
+
+    private int currentDamage = 0;
+    public int NbrOfHitBeforeGettingDamaged = 3;
 
     private bool broken = false;
     private bool haveFell = false;
     public BreakingType BreakingMode = 0;
-    public enum BreakingType { Fall, Scratch, ScratchLoosePart}
+    public enum BreakingType {Fall, Scratch, ScratchLoosePart}
     public List<GameObject> brokenParts;
     void Start()
     {
@@ -29,59 +32,72 @@ public class BreakableItem : MonoBehaviour
 
     void Update()
     {
-        if (BreakingMode == BreakingType.Fall)
+        if (isShaking)
         {
-            if (isShaking)
-            {
-                Shake();
-                localTime += Time.deltaTime;
-            }
+            Shake();
+            localTime += Time.deltaTime;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (BreakingMode == BreakingType.Fall)
+
+        if (other.CompareTag("Player"))
         {
-            if (other.CompareTag("Player"))
-            {
-                isShaking = true;
-                AddMaxAngle();
-                localTime = 0.0f;
-            }
+            Debug.Log("testsqre");
+            isShaking = true;
+            Attack();
+            localTime = 0.0f;
         }
     }
 
     void Shake()
     {
-        if (BreakingMode == BreakingType.Fall)
+        if (!haveFell)
         {
-            if (!haveFell)
+            if (currentForce > 1.0f)
             {
-                if (currentForce > 1.0f)
+                if (BreakingMode == BreakingType.Fall)
                 {
-                    Debug.Log("reee");
-                    GetComponent<BoxCollider2D>().enabled = false;
                     Fall();
-                }
-                else
-                {
-                    image.transform.rotation = Quaternion.Euler(0, 0, (currentForce * maxAngle) * Mathf.Sin(localTime * (shakingMaxSpeed * Mathf.Abs(currentForce - 1.0f))));
-                    currentForce -= Time.deltaTime / stabilisationSpeed;
-                    if (currentForce <= 0.01f)
-                    {
-                        currentForce = 0.0f;
-                        image.transform.rotation = Quaternion.Euler(0, 0, 0);
-                        isShaking = false;
-                    }
+                    GetComponent<BoxCollider2D>().enabled = false;
                 }
             }
-        }
+            else
+            {
+                image.transform.rotation = Quaternion.Euler(0, 0, (currentForce * maxAngle) * Mathf.Sin(localTime * (shakingMaxSpeed * Mathf.Abs(currentForce - 1.0f))));
+                currentForce -= Time.deltaTime / stabilisationSpeed;
+                if (currentForce <= 0.01f)
+                {
+                    currentForce = 0.0f;
+                    image.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    isShaking = false;
+                }
+            }
+        }      
     }
 
-    void AddMaxAngle()
+    void Attack()
     {
-        currentForce += AddedForce;
+        //add max angle for the objects that fall
+        if (BreakingMode == BreakingType.Fall)
+        {
+            currentForce += AddedForce;
+        }
+        //add damage for the object that doesn't fall
+        else if (BreakingMode == BreakingType.Scratch)
+        {
+            currentForce += AddedForce;
+            currentDamage += 1;
+            Debug.Log(currentDamage);
+            if(currentDamage >= NbrOfHitBeforeGettingDamaged)
+            {
+                GetComponent<BoxCollider2D>().enabled = false;
+                Break();
+            }
+        }
+
+
     }
 
     void Fall()
@@ -102,8 +118,9 @@ public class BreakableItem : MonoBehaviour
             {
                 image.transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = true;
             }
-            if (throwPartWhenBraek)
+            if (throwPartWhenBreak)
             {
+                Debug.Log("test");
                 for (int i = 0; i < brokenParts.Count; i++)
                 {
                     GameObject part = Instantiate(brokenParts[i], image.transform.position + Vector3.up * 1f, Quaternion.identity);

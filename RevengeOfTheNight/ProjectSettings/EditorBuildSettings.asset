@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 808a066df0a17274f92081a88fbb7f59
+  - enabled: 1
+    path: Assets/Scenes/LorisTestScene.unity
+    guid: 169ab2fc84403d840a197eafa5e2f4c6
   m_configObjects: {}

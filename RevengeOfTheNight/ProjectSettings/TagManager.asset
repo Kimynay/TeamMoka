@@ -54,6 +54,15 @@ TagManager:
   - name: Walls
     uniqueID: 764627297
     locked: 0
+  - name: Stairs
+    uniqueID: 1229018613
+    locked: 0
+  - name: Decors
+    uniqueID: 1846742647
+    locked: 0
+  - name: Ping
+    uniqueID: 3069917439
+    locked: 0
   - name: BreakableItems
     uniqueID: 4120727263
     locked: 0

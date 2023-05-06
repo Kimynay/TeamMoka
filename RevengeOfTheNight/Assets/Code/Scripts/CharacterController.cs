@@ -5,14 +5,15 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
     private float horizontal;
-    private float speed = 8f;
-    private float jumpingPower = 8f;
+    private float speed = 6f;
+    private float jumpingPower = 4.5f;
     private bool isFacingRight = true;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Animator animator;
+    public bool canTp;
 
     private bool jumping = false;
 
@@ -32,12 +33,7 @@ public class CharacterController : MonoBehaviour
             animator.SetBool("isJumping",true);
         }
 
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-            jumping=true;
-            animator.SetBool("isJumping",true);
-        }
+       
 
         Flip();
     }
@@ -64,4 +60,6 @@ public class CharacterController : MonoBehaviour
             transform.localScale = localScale;
         }
     }
+
+    
 }

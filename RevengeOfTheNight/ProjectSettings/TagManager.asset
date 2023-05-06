@@ -13,9 +13,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Player
+  - TP
+  - Human
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Teleporters
+    uniqueID: 1783356413
+    locked: 0
+  - name: Hiders
+    uniqueID: 3591690027
+    locked: 0
+  - name: Walls
+    uniqueID: 764627297
+    locked: 0
+  - name: Player
+    uniqueID: 4269353145
     locked: 0

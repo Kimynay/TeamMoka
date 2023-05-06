@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LorisTestScene.unity
     guid: 169ab2fc84403d840a197eafa5e2f4c6
+  - enabled: 1
+    path: Assets/Scenes/Lose.unity
+    guid: 3c8a265972d8cde408f08a9da2f3c577
   m_configObjects: {}

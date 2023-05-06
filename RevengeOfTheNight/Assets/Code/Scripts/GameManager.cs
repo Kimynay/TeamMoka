@@ -9,13 +9,14 @@ public class GameManager : MonoBehaviour
 
     private int playerPosition = 2;
     private int humanPosition = 8;
+    private float sameRoomTime = 1f;
     
     public void setHumanPosition(int pos)
     {
         humanPosition = pos;
         if (humanPosition==playerPosition)
         {
-             SceneManager.LoadScene(3);
+            Invoke("loseIfSameRoom",sameRoomTime);
         }
     }
     public void setPlayerPosition(int pos)
@@ -23,9 +24,16 @@ public class GameManager : MonoBehaviour
         playerPosition=pos;
         if (humanPosition==playerPosition)
         {
-             SceneManager.LoadScene(3);
+            Invoke("loseIfSameRoom",sameRoomTime);
         }
     }
 
+    private void loseIfSameRoom()
+    {
+        if (humanPosition==playerPosition)
+        {
+            SceneManager.LoadScene(3);
+        }
+    }
     
 }

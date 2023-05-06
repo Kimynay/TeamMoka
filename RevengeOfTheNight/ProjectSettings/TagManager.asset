@@ -54,6 +54,9 @@ TagManager:
   - name: Walls
     uniqueID: 764627297
     locked: 0
+  - name: Ping
+    uniqueID: 3069917439
+    locked: 0
   - name: BreakableItems
     uniqueID: 4120727263
     locked: 0

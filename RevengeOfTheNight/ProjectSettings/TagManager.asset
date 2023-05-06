@@ -54,6 +54,12 @@ TagManager:
   - name: Walls
     uniqueID: 764627297
     locked: 0
+  - name: Stairs
+    uniqueID: 3512600371
+    locked: 0
+  - name: Furniture
+    uniqueID: 850803123
+    locked: 0
   - name: BreakableItems
     uniqueID: 4120727263
     locked: 0

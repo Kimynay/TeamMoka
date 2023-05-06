@@ -23,14 +23,14 @@ public class CharacterController : MonoBehaviour
         if (jumping)
         {
             jumping=false;
-            animator.SetBool("isJumping",false);
+            //animator.SetBool("isJumping",false);
         }
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             jumping=true;
-            animator.SetBool("isJumping",true);
+            //animator.SetBool("isJumping",true);
         }
 
        
@@ -41,8 +41,8 @@ public class CharacterController : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-        if (horizontal!=0) animator.SetBool("isRunning", true);
-        else animator.SetBool("isRunning", false);
+        if (horizontal!=0) animator.SetBool("isFlying", true);
+        else animator.SetBool("isFlying", false);
     }
 
     private bool IsGrounded()

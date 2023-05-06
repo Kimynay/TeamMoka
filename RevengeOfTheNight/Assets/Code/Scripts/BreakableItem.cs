@@ -13,6 +13,9 @@ public class BreakableItem : MonoBehaviour
     public float stabilisationSpeed = 10;
     private GameObject image;
     private float localTime = 0.0f;
+
+    public BreakingType BreakingMode = 0;
+    public enum BreakingType { Fall, Scratch, ScratchLoosePart}
     void Start()
     {
         image = transform.GetChild(0).gameObject;
@@ -20,35 +23,49 @@ public class BreakableItem : MonoBehaviour
 
     void Update()
     {
-        if(isShaking)
+        if (BreakingMode == BreakingType.Fall)
         {
-            Shake();
-            localTime += Time.deltaTime;
+            if (isShaking)
+            {
+                Shake();
+                localTime += Time.deltaTime;
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        isShaking = true;
-        AddMaxAngle();
-        localTime = 0.0f;
+        if (BreakingMode == BreakingType.Fall)
+        {
+            if (other.CompareTag("Player"))
+            {
+                isShaking = true;
+                AddMaxAngle();
+                localTime = 0.0f;
+            }
+        }
     }
 
     void Shake()
     {
-        if (currentForce > 1.0f)
+        if (BreakingMode == BreakingType.Fall)
         {
-            Debug.Log("Falliiiiiiiing");
-        }
-        else
-        {
-            image.transform.rotation = Quaternion.Euler(0, 0, (currentForce * maxAngle) * Mathf.Sin(localTime * (shakingMaxSpeed * Mathf.Abs(currentForce - 1.0f))));
-            currentForce -= Time.deltaTime / stabilisationSpeed;
-            if (currentForce <= 0.01f)
+            if (currentForce > 1.0f)
             {
-                currentForce = 0.0f;
-                image.transform.rotation = Quaternion.Euler(0, 0, 0);
-                isShaking = false;
+                GetComponent<BoxCollider2D>().enabled = false;
+                Debug.Log("Falliiiiiiiing");
+                Fall();
+            }
+            else
+            {
+                image.transform.rotation = Quaternion.Euler(0, 0, (currentForce * maxAngle) * Mathf.Sin(localTime * (shakingMaxSpeed * Mathf.Abs(currentForce - 1.0f))));
+                currentForce -= Time.deltaTime / stabilisationSpeed;
+                if (currentForce <= 0.01f)
+                {
+                    currentForce = 0.0f;
+                    image.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    isShaking = false;
+                }
             }
         }
     }
@@ -56,5 +73,15 @@ public class BreakableItem : MonoBehaviour
     void AddMaxAngle()
     {
         currentForce += AddedForce;
+    }
+
+    void Fall()
+    {
+        image.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+    }
+
+    public void Break()
+    {
+        Debug.Log("Break");
     }
 }

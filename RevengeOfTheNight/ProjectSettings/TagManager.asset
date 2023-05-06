@@ -48,8 +48,14 @@ TagManager:
   - name: Hiders
     uniqueID: 3591690027
     locked: 0
+  - name: BackgroundWalls
+    uniqueID: 3545677455
+    locked: 0
   - name: Walls
     uniqueID: 764627297
+    locked: 0
+  - name: BreakableItems
+    uniqueID: 4120727263
     locked: 0
   - name: Player
     uniqueID: 4269353145

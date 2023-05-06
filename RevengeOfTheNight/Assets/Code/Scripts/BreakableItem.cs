@@ -14,7 +14,7 @@ public class BreakableItem : MonoBehaviour
     private GameObject image;
     private float localTime = 0.0f;
     public bool disapearWhenBreak = true;
-    public bool throwPartWhenBraek = true;
+    public bool throwPartWhenBreak = true;
     public bool changeImageWhenBreak = false;
 
     private bool broken = false;
@@ -102,8 +102,9 @@ public class BreakableItem : MonoBehaviour
             {
                 image.transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = true;
             }
-            if (throwPartWhenBraek)
+            if (throwPartWhenBreak)
             {
+                Debug.Log("test");
                 for (int i = 0; i < brokenParts.Count; i++)
                 {
                     GameObject part = Instantiate(brokenParts[i], image.transform.position + Vector3.up * 1f, Quaternion.identity);

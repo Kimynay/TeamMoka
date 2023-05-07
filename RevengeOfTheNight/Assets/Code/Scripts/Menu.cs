@@ -19,7 +19,7 @@ public class Menu : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     public void Quit()
@@ -29,11 +29,11 @@ public class Menu : MonoBehaviour
 
     public void GoToMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
     public void GoToCredits()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(3);
     }
 }

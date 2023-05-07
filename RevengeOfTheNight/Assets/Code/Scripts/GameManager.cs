@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
         slider.value=destroyedObjects/totalObjects;
         if (destroyedObjects==totalObjects)
         {
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(4);
         }
     }
 

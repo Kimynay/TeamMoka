@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
     {
         if (humanPosition==playerPosition)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(2);
         }
     }
 

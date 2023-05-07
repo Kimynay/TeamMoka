@@ -51,6 +51,8 @@ public class Human : MonoBehaviour
         else facingRight=true;
     }
 
+
+
     /*
     public void nextAction()
     {

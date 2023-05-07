@@ -25,17 +25,19 @@ public class GameManager : MonoBehaviour
     public bool heardNoise = false;
 
     public Camera cam;
+    private float startTime = 0.0f;
 
     private void Start()
     {
         cam=Camera.main;
         deZoom();
+        startTime = Time.time;
     }
 
     private void Update()
     {
-        if (Time.time < nightDuration)
-            moonAnchor.transform.rotation = Quaternion.Euler(0, 0, Mathf.Lerp(moonStartRotation, -moonStartRotation, Time.time / nightDuration));
+        if (Time.time < startTime + nightDuration)
+            moonAnchor.transform.rotation = Quaternion.Euler(0, 0, Mathf.Lerp(moonStartRotation, -moonStartRotation, (Time.time - startTime) / nightDuration));
         else
             SceneManager.LoadScene(3);
 

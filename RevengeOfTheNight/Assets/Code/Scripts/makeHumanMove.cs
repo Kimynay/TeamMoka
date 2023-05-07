@@ -11,7 +11,6 @@ public class makeHumanMove : MonoBehaviour
     {
         if (targetNumber==human.target)
         {
-            print("nello");
             human.nextAction();
         }
     }

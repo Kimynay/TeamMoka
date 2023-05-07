@@ -7,13 +7,14 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
-    private int playerPosition = 2;
-    private int humanPosition = 8;
+    public int playerPosition = 1;
+    public int humanPosition = 8;
     private float sameRoomTime = 1f;
 
     public float nightDuration = 60;
     public GameObject moonAnchor;
     private float moonStartRotation = 29f;
+    public int destroyedObjects = 0;
 
     private void Update()
     {

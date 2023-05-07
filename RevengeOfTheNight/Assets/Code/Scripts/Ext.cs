@@ -11,6 +11,7 @@ public class Ext : MonoBehaviour
         if (other.gameObject.layer == 8)
         {
             GM.setPlayerPosition(0);
+            GM.deZoom();
         }
     }
 }

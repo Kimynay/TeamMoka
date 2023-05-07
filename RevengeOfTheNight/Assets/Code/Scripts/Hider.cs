@@ -17,6 +17,7 @@ public class Hider : MonoBehaviour
             m.enabled = false;
             //GM.setPlayerPosition(roomNumber);
             GM.setPlayerFloor(floorNumber);
+            GM.Zoom();
         }
         if (other.gameObject.layer == 10)
         {

@@ -24,6 +24,14 @@ public class GameManager : MonoBehaviour
 
     public bool heardNoise = false;
 
+    public Camera cam;
+
+    private void Start()
+    {
+        cam=Camera.main;
+        deZoom();
+    }
+
     private void Update()
     {
         if (Time.time < nightDuration)
@@ -73,6 +81,17 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(5);
         }
+    }
+
+    public void deZoom()
+    {
+        cam.orthographicSize=9;
+        cam.transform.position = new Vector3(-1.72f,2.24f,-10f);
+    }
+    public void Zoom()
+    {
+        cam.orthographicSize=5;
+        cam.transform.position = new Vector3(0f,0f,-10f);
     }
     
 }

@@ -132,6 +132,7 @@ public class BreakableItem : MonoBehaviour
                 broken = true;
             }
             GM.heardNoise = true;
+            GM.destroyedObjects+=1;
         }
     }
 }

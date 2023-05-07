@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ping : MonoBehaviour
 {
     private bool ping=true;
-    private float pingPeriod = 1f;
+    private float pingPeriod = 3f;
     Vector3 localScale;
     private float pingSpeed=0.45f;
     [SerializeField] GameObject human;

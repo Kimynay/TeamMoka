@@ -83,6 +83,21 @@ MonoBehaviour:
   disapearWhenBreak: 1
   throwPartWhenBreak: 1
   changeImageWhenBreak: 0
+  audioHit:
+  - {fileID: 8300000, guid: d3af7a22ca767cc4291ad136a5af6785, type: 3}
+  - {fileID: 8300000, guid: 720dfd9fb79597942a3ccc25f80a6ebf, type: 3}
+  - {fileID: 8300000, guid: bd556eed1fa361440a7c1585446f0622, type: 3}
+  - {fileID: 8300000, guid: 73cbd592a86dde046b8f0fb995e76c0c, type: 3}
+  - {fileID: 8300000, guid: 62739e2f3e27cac44bca522595fe4479, type: 3}
+  audioBreak:
+  - {fileID: 8300000, guid: 0722ae6b7b14c7c44b40d3697b1e986f, type: 3}
+  - {fileID: 8300000, guid: b787d80773eeea540afb85f30c2a5ed9, type: 3}
+  - {fileID: 8300000, guid: ead7470c5fa7e4f4990f7c3953cf651f, type: 3}
+  - {fileID: 8300000, guid: a95eada469a293b4f95f90bf965cde7a, type: 3}
+  - {fileID: 8300000, guid: a5fbf3d38ea8b384da4bcb0abc9b93f0, type: 3}
+  - {fileID: 8300000, guid: fbddaf1a01bac754aaab7b6ef51fa722, type: 3}
+  - {fileID: 8300000, guid: 279890ae7775f524d98dd0aa5003aa3f, type: 3}
+  - {fileID: 8300000, guid: f8e0fd7e10eeae147bd1fd533fd311ab, type: 3}
   NbrOfHitBeforeGettingDamaged: 3
   BreakingMode: 0
   brokenParts:

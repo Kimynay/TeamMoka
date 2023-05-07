@@ -83,6 +83,17 @@ MonoBehaviour:
   disapearWhenBreak: 1
   throwPartWhenBreak: 0
   changeImageWhenBreak: 1
+  audioHit:
+  - {fileID: 8300000, guid: f8145ced4d148c24090210eee6ddb87d, type: 3}
+  - {fileID: 8300000, guid: 873062ffeeed58c4eb62a618edbdd0ea, type: 3}
+  - {fileID: 8300000, guid: 98b00bd3b633d074f9283fe61d6c328c, type: 3}
+  - {fileID: 8300000, guid: 0b89fbc659f24b440a05a7b18d422230, type: 3}
+  - {fileID: 8300000, guid: 9567761035521864ab6220b14e2714bb, type: 3}
+  audioBreak:
+  - {fileID: 8300000, guid: 21c75989f8322684a96dac2237900251, type: 3}
+  - {fileID: 8300000, guid: a8c56b43d64250845905630741191ca6, type: 3}
+  - {fileID: 8300000, guid: 3a89bb969ca2e7d40aaf08b550976a16, type: 3}
+  - {fileID: 8300000, guid: 76aa4945af41cec4e8f2e79b4303c706, type: 3}
   NbrOfHitBeforeGettingDamaged: 3
   BreakingMode: 1
   brokenParts: []

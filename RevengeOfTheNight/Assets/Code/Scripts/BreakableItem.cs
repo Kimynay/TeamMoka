@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BreakableItem : MonoBehaviour
 {
+    [SerializeField] private GameManager GM;
     //[Range(-1f, 1f)]
     public float currentForce = 0.0f;
     public bool isShaking = false;
@@ -130,6 +131,7 @@ public class BreakableItem : MonoBehaviour
                 }
                 broken = true;
             }
+            GM.heardNoise = true;
         }
     }
 }

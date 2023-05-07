@@ -14,7 +14,6 @@ public class Human : MonoBehaviour
     //[SerializeField] private int controllerNumber;
     public bool isMoving = true;
     private float speed = 1.0f;
-    private bool heardNoise = true;
     public bool canTp=true;
     private bool facingRight = true;
 
@@ -52,10 +51,6 @@ public class Human : MonoBehaviour
         else facingRight=true;
     }
 
-    public void makeNoise()
-    {
-        heardNoise=true;
-    }
     /*
     public void nextAction()
     {
@@ -117,7 +112,7 @@ public class Human : MonoBehaviour
         }
             else
             {
-            if (heardNoise&&GM.playerPosition!=0)
+            if (GM.heardNoise&&GM.playerPosition!=0)
             {
                 if (GM.playerFloor!=GM.humanFloor)
                 {
@@ -127,13 +122,13 @@ public class Human : MonoBehaviour
                         {
                             transform.position = teleporters[2].transform.position;
                             target=11;
-                            heardNoise=false;
+                            GM.heardNoise=false;
                             animator.SetBool("isWalking",true);
                             isMoving=true;
                         }
                         else 
                         {
-                            heardNoise=false;
+                            GM.heardNoise=false;
                             animator.SetBool("isWalking",true);
                             isMoving=true;
                             target=18;
@@ -145,13 +140,13 @@ public class Human : MonoBehaviour
                         {
                             transform.position = teleporters[1].transform.position;
                             target=10;
-                            heardNoise=false;
+                            GM.heardNoise=false;
                             animator.SetBool("isWalking",true);
                             isMoving=true;
                         }
                         else 
                         {
-                            heardNoise=false;
+                            GM.heardNoise=false;
                             animator.SetBool("isWalking",true);
                             isMoving=true;
                             target=18;
@@ -165,13 +160,13 @@ public class Human : MonoBehaviour
                             {
                                 transform.position = teleporters[0].transform.position;
                                 target=3;
-                                heardNoise=false;
+                                GM.heardNoise=false;
                                 animator.SetBool("isWalking",true);
                                 isMoving=true;
                             }
                             else 
                             {
-                                heardNoise=false;
+                                GM.heardNoise=false;
                                 animator.SetBool("isWalking",true);
                                 isMoving=true;
                                 target=9;
@@ -183,13 +178,13 @@ public class Human : MonoBehaviour
                             {
                                 transform.position = teleporters[3].transform.position;
                                 target=3;
-                                heardNoise=false;
+                                GM.heardNoise=false;
                                 animator.SetBool("isWalking",true);
                                 isMoving=true;
                             }
                             else 
                             {
-                                heardNoise=false;
+                                GM.heardNoise=false;
                                 animator.SetBool("isWalking",true);
                                 isMoving=true;
                                 target=12;
@@ -201,70 +196,70 @@ public class Human : MonoBehaviour
                 {
                     if (GM.playerPosition==1)
                     {
-                        heardNoise=false;
+                        GM.heardNoise=false;
                         isMoving=true;
                         animator.SetBool("isWalking",true);
                         target=0;
                     }
                     else if (GM.playerPosition==2)
                     {
-                        heardNoise=false;
+                        GM.heardNoise=false;
                         isMoving=true;
                         animator.SetBool("isWalking",true);
                         target=2;
                     }
                     else if (GM.playerPosition==3)
                     {
-                        heardNoise=false;
+                        GM.heardNoise=false;
                         isMoving=true;
                         animator.SetBool("isWalking",true);
                         target=4;
                     }
                     else if (GM.playerPosition==4)
                     {
-                        heardNoise=false;
+                        GM.heardNoise=false;
                         isMoving=true;
                         animator.SetBool("isWalking",true);
                         target=6;
                     }
                     else if (GM.playerPosition==5)
                     {
-                        heardNoise=false;
+                        GM.heardNoise=false;
                         isMoving=true;
                         animator.SetBool("isWalking",true);
                         target=7;
                     }
                     else if (GM.playerPosition==6)
                     {
-                        heardNoise=false;
+                        GM.heardNoise=false;
                         isMoving=true;
                         animator.SetBool("isWalking",true);
                         target=10;
                     }
                     else if (GM.playerPosition==7)
                     {
-                        heardNoise=false;
+                        GM.heardNoise=false;
                         isMoving=true;
                         animator.SetBool("isWalking",true);
                         target=11;
                     }
                     else if (GM.playerPosition==8)
                     {
-                        heardNoise=false;
+                        GM.heardNoise=false;
                         isMoving=true;
                         animator.SetBool("isWalking",true);
                         target=13;
                     }
                     else if (GM.playerPosition==9)
                     {
-                        heardNoise=false;
+                        GM.heardNoise=false;
                         isMoving=true;
                         animator.SetBool("isWalking",true);
                         target=15;
                     }
                     else if (GM.playerPosition==10)
                     {
-                        heardNoise=false;
+                        GM.heardNoise=false;
                         isMoving=true;
                         animator.SetBool("isWalking",true);
                         target=17;

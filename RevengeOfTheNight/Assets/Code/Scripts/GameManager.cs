@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     private float moonStartRotation = 29f;
     public int destroyedObjects = 0;
 
+    public bool heardNoise = false;
+
     private void Update()
     {
         if (Time.time < nightDuration)

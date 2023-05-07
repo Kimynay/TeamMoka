@@ -2122,7 +2122,7 @@ MonoBehaviour:
   humanPosition: 8
   playerFloor: 1
   humanFloor: 3
-  nightDuration: 60
+  nightDuration: 180
   moonAnchor: {fileID: 1732347125}
   destroyedObjects: 0
   slider: {fileID: 1869237442}

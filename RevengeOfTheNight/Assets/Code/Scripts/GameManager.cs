@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public int humanFloor = 3;
     private float sameRoomTime = 1f;
 
-    public float nightDuration = 60;
+    public float nightDuration = 180;
     public GameObject moonAnchor;
     private float moonStartRotation = 29f;
     public float destroyedObjects = 0f;
@@ -69,6 +69,10 @@ public class GameManager : MonoBehaviour
     public void actualizeSlider()
     {
         slider.value=destroyedObjects/totalObjects;
+        if (destroyedObjects==totalObjects)
+        {
+            SceneManager.LoadScene(5);
+        }
     }
     
 }

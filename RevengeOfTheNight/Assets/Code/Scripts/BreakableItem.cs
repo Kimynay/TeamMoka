@@ -18,6 +18,10 @@ public class BreakableItem : MonoBehaviour
     public bool throwPartWhenBreak = true;
     public bool changeImageWhenBreak = false;
 
+    private AudioSource audioSource;
+    public List<AudioClip> audioHit;
+    public List<AudioClip> audioBreak;
+
     private int currentDamage = 0;
     public int NbrOfHitBeforeGettingDamaged = 3;
 
@@ -29,6 +33,7 @@ public class BreakableItem : MonoBehaviour
     void Start()
     {
         image = transform.GetChild(0).gameObject;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -80,10 +85,12 @@ public class BreakableItem : MonoBehaviour
 
     void Attack()
     {
+        int rand = Random.Range(0, audioHit.Count);
         //add max angle for the objects that fall
         if (BreakingMode == BreakingType.Fall)
         {
             currentForce += AddedForce;
+            audioSource.PlayOneShot(audioHit[rand]);
         }
         //add damage for the object that doesn't fall
         else if (BreakingMode == BreakingType.Scratch)
@@ -95,6 +102,10 @@ public class BreakableItem : MonoBehaviour
             {
                 GetComponent<BoxCollider2D>().enabled = false;
                 Break();
+            }
+            else
+            {
+                audioSource.PlayOneShot(audioHit[rand]);
             }
         }
 
@@ -109,8 +120,10 @@ public class BreakableItem : MonoBehaviour
 
     public void Break()
     {
+
         if (!broken)
         {
+            int randBreak = Random.Range(0, audioBreak.Count);
             if (disapearWhenBreak)
             {
                 image.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
@@ -131,7 +144,10 @@ public class BreakableItem : MonoBehaviour
                 }
                 broken = true;
             }
+            audioSource.PlayOneShot(audioHit[randBreak]);
             GM.heardNoise = true;
+            GM.destroyedObjects+=1;
+            GM.actualizeSlider();
         }
     }
 }

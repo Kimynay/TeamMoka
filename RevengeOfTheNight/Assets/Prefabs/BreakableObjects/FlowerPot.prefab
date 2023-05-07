@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6914429869992354774}
   - component: {fileID: 6914429869992354772}
   - component: {fileID: 6914429869992354773}
+  - component: {fileID: -2848892412291485991}
   m_Layer: 0
   m_Name: FlowerPot
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6914429869992354775}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.567, y: -0.46, z: 0.048714783}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6914429870611752287}
@@ -72,6 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8148c2795681c064da697211ce2fae50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 0}
   currentForce: 0
   isShaking: 0
   maxAngle: 30
@@ -81,12 +83,123 @@ MonoBehaviour:
   disapearWhenBreak: 1
   throwPartWhenBreak: 1
   changeImageWhenBreak: 0
+  audioHit:
+  - {fileID: 8300000, guid: d3af7a22ca767cc4291ad136a5af6785, type: 3}
+  - {fileID: 8300000, guid: 720dfd9fb79597942a3ccc25f80a6ebf, type: 3}
+  - {fileID: 8300000, guid: bd556eed1fa361440a7c1585446f0622, type: 3}
+  - {fileID: 8300000, guid: 73cbd592a86dde046b8f0fb995e76c0c, type: 3}
+  - {fileID: 8300000, guid: 62739e2f3e27cac44bca522595fe4479, type: 3}
+  audioBreak:
+  - {fileID: 8300000, guid: 0722ae6b7b14c7c44b40d3697b1e986f, type: 3}
+  - {fileID: 8300000, guid: b787d80773eeea540afb85f30c2a5ed9, type: 3}
+  - {fileID: 8300000, guid: ead7470c5fa7e4f4990f7c3953cf651f, type: 3}
+  - {fileID: 8300000, guid: a95eada469a293b4f95f90bf965cde7a, type: 3}
+  - {fileID: 8300000, guid: a5fbf3d38ea8b384da4bcb0abc9b93f0, type: 3}
+  - {fileID: 8300000, guid: fbddaf1a01bac754aaab7b6ef51fa722, type: 3}
+  - {fileID: 8300000, guid: 279890ae7775f524d98dd0aa5003aa3f, type: 3}
+  - {fileID: 8300000, guid: f8e0fd7e10eeae147bd1fd533fd311ab, type: 3}
   NbrOfHitBeforeGettingDamaged: 3
   BreakingMode: 0
   brokenParts:
   - {fileID: 7101608693621229817, guid: 4973e854f53136344b1f1fce51480258, type: 3}
   - {fileID: 8642376731817652562, guid: 5cf3cc92f12710745b5c88f47f23af99, type: 3}
   - {fileID: 387716569098249992, guid: b6be5ada1207bbc4e9a405908303529b, type: 3}
+--- !u!82 &-2848892412291485991
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6914429869992354775}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 200
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6914429870611752256
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +355,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -174240033
-  m_SortingLayer: 8
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e266aa5665ae2844a88ce1da074992d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

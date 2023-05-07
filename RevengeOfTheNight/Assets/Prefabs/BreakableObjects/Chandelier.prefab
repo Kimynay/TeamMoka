@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -174240033
-  m_SortingLayer: 7
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8437a2c7c8e2ce047bca316040a61735, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 193068211053410404}
   - component: {fileID: 193068211053410406}
   - component: {fileID: 193068211053410407}
+  - component: {fileID: 2069266245277079264}
   m_Layer: 0
   m_Name: Chandelier
   m_TagString: Untagged
@@ -196,7 +197,7 @@ Transform:
   m_GameObject: {fileID: 193068211053410405}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.988, y: 0.323, z: 0.048714783}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 193068210601688813}
@@ -241,6 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8148c2795681c064da697211ce2fae50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 0}
   currentForce: 0
   isShaking: 0
   maxAngle: 30
@@ -250,9 +252,115 @@ MonoBehaviour:
   disapearWhenBreak: 1
   throwPartWhenBreak: 0
   changeImageWhenBreak: 1
+  audioHit:
+  - {fileID: 8300000, guid: 4e57db7abb0c2b542a05f0e7e12f01c1, type: 3}
+  - {fileID: 8300000, guid: b15c4162ec5a7964c98411c013e39295, type: 3}
+  - {fileID: 8300000, guid: 6f7f2df76af6141488b9c7dcb0fe272c, type: 3}
+  - {fileID: 8300000, guid: 3745e76a4b33cba4890cf70c0f8ae44d, type: 3}
+  audioBreak:
+  - {fileID: 8300000, guid: 48c7f44d98aa31a45832b038a8f2cc26, type: 3}
+  - {fileID: 8300000, guid: 4f1ac92941a388a438485964a5b1cb44, type: 3}
+  - {fileID: 8300000, guid: 3111eae37bad3e649b8635e708c0b659, type: 3}
+  - {fileID: 8300000, guid: 44ce8753360902b4dad236540f8b93bd, type: 3}
   NbrOfHitBeforeGettingDamaged: 3
   BreakingMode: 0
   brokenParts: []
+--- !u!82 &2069266245277079264
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193068211053410405}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 200
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5483708749704481153
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +432,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -174240033
-  m_SortingLayer: 7
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: be7106f69a28e5f4e97867c2349682c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

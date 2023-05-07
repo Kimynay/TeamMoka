@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class GameManager : MonoBehaviour
@@ -16,7 +17,10 @@ public class GameManager : MonoBehaviour
     public float nightDuration = 60;
     public GameObject moonAnchor;
     private float moonStartRotation = 29f;
-    public int destroyedObjects = 0;
+    public float destroyedObjects = 0f;
+    private float totalObjects = 35f;
+
+    public Slider slider;
 
     public bool heardNoise = false;
 
@@ -60,6 +64,11 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(3);
         }
+    }
+
+    public void actualizeSlider()
+    {
+        slider.value=destroyedObjects/totalObjects;
     }
     
 }

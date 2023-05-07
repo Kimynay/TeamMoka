@@ -133,6 +133,7 @@ public class BreakableItem : MonoBehaviour
             }
             GM.heardNoise = true;
             GM.destroyedObjects+=1;
+            GM.actualizeSlider();
         }
     }
 }

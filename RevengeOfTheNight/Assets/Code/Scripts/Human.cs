@@ -11,7 +11,7 @@ public class Human : MonoBehaviour
     public int target;
     //[SerializeField] private int controllerNumber;
     public bool isMoving = true;
-    private float speed = 3.0f;
+    private float speed = 1.0f;
     private bool heardNoise = false;
     public bool canTp=true;
     private bool facingRight = true;

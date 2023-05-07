@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public int playerPosition = 1;
     public int humanPosition = 8;
+    public int playerFloor = 1;
+    public int humanFloor = 3;
     private float sameRoomTime = 1f;
 
     public float nightDuration = 60;
@@ -31,6 +33,15 @@ public class GameManager : MonoBehaviour
         {
             Invoke("loseIfSameRoom",sameRoomTime);
         }
+    }
+
+    public void setPlayerFloor(int floor)
+    {
+        playerFloor=floor;
+    }
+    public void setHumanFloor(int floor)
+    {
+        humanFloor=floor;
     }
     public void setPlayerPosition(int pos)
     {

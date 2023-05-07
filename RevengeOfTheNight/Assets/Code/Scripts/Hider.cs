@@ -7,6 +7,7 @@ public class Hider : MonoBehaviour
 {
     private SpriteRenderer m;
     [SerializeField] private int roomNumber;
+    [SerializeField] private int floorNumber;
     [SerializeField] private GameManager GM;
 
     private void OnTriggerEnter2D(Collider2D other) 
@@ -16,10 +17,13 @@ public class Hider : MonoBehaviour
             m =gameObject.GetComponent<SpriteRenderer>();
             m.enabled = false;
             GM.setPlayerPosition(roomNumber);
+            GM.setPlayerFloor(floorNumber);
         }
         if (other.gameObject.layer == 10)
         {
             GM.setHumanPosition(roomNumber);
+            GM.setHumanFloor(floorNumber);
+
         }
     }
     private void OnTriggerExit2D(Collider2D other) 

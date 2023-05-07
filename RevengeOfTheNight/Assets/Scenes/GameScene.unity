@@ -1658,8 +1658,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPosition: 1
   humanPosition: 8
+  playerFloor: 1
+  humanFloor: 3
   nightDuration: 60
   moonAnchor: {fileID: 1732347125}
+  destroyedObjects: 0
 --- !u!4 &320786600
 Transform:
   m_ObjectHideFlags: 0
@@ -1741,7 +1744,7 @@ SpriteRenderer:
   m_Size: {x: 38.399998, y: 21.599998}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &326581837
@@ -1976,6 +1979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNumber: 1
+  floorNumber: 1
   GM: {fileID: 320786599}
 --- !u!61 &392912523
 BoxCollider2D:
@@ -2932,6 +2936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNumber: 5
+  floorNumber: 2
   GM: {fileID: 320786599}
 --- !u!61 &573551431
 BoxCollider2D:
@@ -3362,7 +3367,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &793831297
 Transform:
   m_ObjectHideFlags: 0
@@ -3691,12 +3696,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6575248766781459913, guid: 27309e8f64392ef4fba3d5063942198d, type: 3}
       propertyPath: m_SortingLayer
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6575248766781459913, guid: 27309e8f64392ef4fba3d5063942198d, type: 3}
       propertyPath: m_SortingLayerID
       value: -1489453223
       objectReference: {fileID: 0}
+    - target: {fileID: 6575248766781459917, guid: 27309e8f64392ef4fba3d5063942198d, type: 3}
+      propertyPath: GM
+      value: 
+      objectReference: {fileID: 320786599}
     - target: {fileID: 6575248766781459917, guid: 27309e8f64392ef4fba3d5063942198d, type: 3}
       propertyPath: target
       value: 13
@@ -3845,9 +3854,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6575248766781459919, guid: 27309e8f64392ef4fba3d5063942198d, type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6575248767586350387, guid: 27309e8f64392ef4fba3d5063942198d, type: 3}
       propertyPath: m_SortingLayer
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6575248767586350387, guid: 27309e8f64392ef4fba3d5063942198d, type: 3}
       propertyPath: m_SortingLayerID
@@ -3855,7 +3868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6575248768202693804, guid: 27309e8f64392ef4fba3d5063942198d, type: 3}
       propertyPath: m_SortingLayer
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6575248768202693804, guid: 27309e8f64392ef4fba3d5063942198d, type: 3}
       propertyPath: m_SortingLayerID
@@ -4776,6 +4789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNumber: 4
+  floorNumber: 1
   GM: {fileID: 320786599}
 --- !u!61 &1119474696
 BoxCollider2D:
@@ -4975,6 +4989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNumber: 2
+  floorNumber: 1
   GM: {fileID: 320786599}
 --- !u!61 &1186185591
 BoxCollider2D:
@@ -5645,6 +5660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNumber: 7
+  floorNumber: 2
   GM: {fileID: 320786599}
 --- !u!61 &1392816426
 BoxCollider2D:
@@ -5953,8 +5969,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509077169}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.9097, y: -3.9438, z: 2.4203057}
-  m_LocalScale: {x: 4.0317006, y: 2.1507578, z: 1}
+  m_LocalPosition: {x: -0.8595, y: -3.9438, z: 2.4203057}
+  m_LocalScale: {x: 4.1320896, y: 2.1507578, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 793831297}
@@ -5973,6 +5989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNumber: 3
+  floorNumber: 1
   GM: {fileID: 320786599}
 --- !u!61 &1509077172
 BoxCollider2D:
@@ -6442,8 +6459,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1644232867}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0815, y: 0.5494999, z: 2.4203057}
-  m_LocalScale: {x: 4.794012, y: 2.0823863, z: 1}
+  m_LocalPosition: {x: -1.0623, y: 0.5494999, z: 2.4203057}
+  m_LocalScale: {x: 4.832364, y: 2.0823863, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 793831297}
@@ -6488,6 +6505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNumber: 9
+  floorNumber: 3
   GM: {fileID: 320786599}
 --- !u!212 &1644232871
 SpriteRenderer:
@@ -6672,6 +6690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNumber: 8
+  floorNumber: 3
   GM: {fileID: 320786599}
 --- !u!61 &1676136145
 BoxCollider2D:
@@ -7306,8 +7325,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855256712}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.9118001, y: 0.5671, z: 2.4203057}
-  m_LocalScale: {x: 5.187958, y: 2.1176708, z: 1}
+  m_LocalPosition: {x: 3.9695, y: 0.5671, z: 2.4203057}
+  m_LocalScale: {x: 5.30313, y: 2.1176708, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 793831297}
@@ -7352,6 +7371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNumber: 10
+  floorNumber: 3
   GM: {fileID: 320786599}
 --- !u!212 &1855256716
 SpriteRenderer:
@@ -7736,6 +7756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e4dc411988177f42b694242796facc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 0}
   animator: {fileID: 0}
   human: {fileID: 1924736762}
   movePoints:
@@ -8404,6 +8425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNumber: 6
+  floorNumber: 2
   GM: {fileID: 320786599}
 --- !u!61 &2060412171
 BoxCollider2D:

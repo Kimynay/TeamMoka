@@ -146,6 +146,8 @@ public class BreakableItem : MonoBehaviour
             }
             audioSource.PlayOneShot(audioBreak[randBreak]);
             GM.heardNoise = true;
+            GM.noisePosition=GM.playerPosition;
+            GM.noiseFloor=GM.playerFloor;
             GM.destroyedObjects+=1;
             GM.actualizeSlider();
         }

@@ -17,6 +17,8 @@ public class Human : MonoBehaviour
     public bool canTp=true;
     private bool facingRight = true;
 
+    public float lastAction=0f; // pas censé être nécessaire... la fonction arrête parfois de s'appeler (bug)
+
     // Start is called before the first frame update
      private void Awake()
     {
@@ -26,6 +28,9 @@ public class Human : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        lastAction+=Time.deltaTime;
+        if (lastAction>=15f) nextAction();
+
         if (isMoving)
         {
             float step = speed * Time.deltaTime;
@@ -105,6 +110,7 @@ public class Human : MonoBehaviour
     */
     public void nextAction()
     {
+        lastAction=0f;
         if (GM.playerPosition==GM.humanPosition)
         {
             if (isMoving) flipHuman();
@@ -112,11 +118,12 @@ public class Human : MonoBehaviour
             animator.SetBool("isWalking",false);
             Invoke("nextAction",breakTime);
         }
-            else
-            {
+        
+        else
+        {
             if (GM.heardNoise&&GM.playerPosition!=0)
             {
-                if (GM.playerFloor!=GM.humanFloor)
+                if (GM.noiseFloor!=GM.humanFloor)
                 {
                     if (GM.humanFloor==3)
                     {
@@ -151,12 +158,12 @@ public class Human : MonoBehaviour
                             GM.heardNoise=false;
                             animator.SetBool("isWalking",true);
                             isMoving=true;
-                            target=18;
+                            target=2;
                         }
                     }
                     else if (GM.humanFloor==2)
                     {
-                        if (GM.playerFloor==1)
+                        if (GM.noiseFloor==1)
                         {
                             if (target==9)
                             {
@@ -179,7 +186,7 @@ public class Human : MonoBehaviour
                             if (target==12)
                             {
                                 transform.position = teleporters[3].transform.position;
-                                target=3;
+                                target=17; //changed
                                 GM.heardNoise=false;
                                 animator.SetBool("isWalking",true);
                                 isMoving=true;
@@ -196,70 +203,70 @@ public class Human : MonoBehaviour
                 }
                 else
                 {
-                    if (GM.playerPosition==1)
+                    if (GM.noisePosition==1)
                     {
                         GM.heardNoise=false;
                         isMoving=true;
                         animator.SetBool("isWalking",true);
                         target=0;
                     }
-                    else if (GM.playerPosition==2)
+                    else if (GM.noisePosition==2)
                     {
                         GM.heardNoise=false;
                         isMoving=true;
                         animator.SetBool("isWalking",true);
                         target=2;
                     }
-                    else if (GM.playerPosition==3)
+                    else if (GM.noisePosition==3)
                     {
                         GM.heardNoise=false;
                         isMoving=true;
                         animator.SetBool("isWalking",true);
                         target=4;
                     }
-                    else if (GM.playerPosition==4)
+                    else if (GM.noisePosition==4)
                     {
                         GM.heardNoise=false;
                         isMoving=true;
                         animator.SetBool("isWalking",true);
                         target=6;
                     }
-                    else if (GM.playerPosition==5)
+                    else if (GM.noisePosition==5)
                     {
                         GM.heardNoise=false;
                         isMoving=true;
                         animator.SetBool("isWalking",true);
                         target=7;
                     }
-                    else if (GM.playerPosition==6)
+                    else if (GM.noisePosition==6)
                     {
                         GM.heardNoise=false;
                         isMoving=true;
                         animator.SetBool("isWalking",true);
                         target=10;
                     }
-                    else if (GM.playerPosition==7)
+                    else if (GM.noisePosition==7)
                     {
                         GM.heardNoise=false;
                         isMoving=true;
                         animator.SetBool("isWalking",true);
                         target=11;
                     }
-                    else if (GM.playerPosition==8)
+                    else if (GM.noisePosition==8)
                     {
                         GM.heardNoise=false;
                         isMoving=true;
                         animator.SetBool("isWalking",true);
                         target=13;
                     }
-                    else if (GM.playerPosition==9)
+                    else if (GM.noisePosition==9)
                     {
                         GM.heardNoise=false;
                         isMoving=true;
                         animator.SetBool("isWalking",true);
                         target=15;
                     }
-                    else if (GM.playerPosition==10)
+                    else if (GM.noisePosition==10)
                     {
                         GM.heardNoise=false;
                         isMoving=true;
@@ -269,6 +276,7 @@ public class Human : MonoBehaviour
                     
                 }
             }
+            
             else
             {
                 if (Random.Range(0.0f,10.0f)>5.0f)

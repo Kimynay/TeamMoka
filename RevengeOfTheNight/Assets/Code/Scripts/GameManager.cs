@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public int humanPosition = 8;
     public int playerFloor = 1;
     public int humanFloor = 3;
+    public int noisePosition = -1;
+    public int noiseFloor = -1;
+
     private float sameRoomTime = 1f;
 
     public float nightDuration = 180;
@@ -39,7 +42,7 @@ public class GameManager : MonoBehaviour
         if (Time.time < startTime + nightDuration)
             moonAnchor.transform.rotation = Quaternion.Euler(0, 0, Mathf.Lerp(moonStartRotation, -moonStartRotation, (Time.time - startTime) / nightDuration));
         else
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(2);
 
     }
     public void setHumanPosition(int pos)
